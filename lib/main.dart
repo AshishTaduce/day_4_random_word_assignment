@@ -53,9 +53,9 @@ class _PasswordGeneratorState extends State<PasswordGenerator> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: <Widget>[
-                Text('$random1 $random2 $random3',
+                Text('${random1[0].toUpperCase() + random1.substring(1)} ${random2[0].toUpperCase() + random2.substring(1)} ${random3[0].toUpperCase() + random3.substring(1)}',
                 style: TextStyle(
-                  fontSize: 16,
+                  fontSize: 22,
                 ),),
 
               ],
