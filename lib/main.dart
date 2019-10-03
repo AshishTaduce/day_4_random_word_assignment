@@ -1,11 +1,15 @@
 import 'dart:math';
 import 'package:dart_random_choice/dart_random_choice.dart';
-
+import 'package:english_words/english_words.dart';
 import 'package:day_4_random_word_assignment/words.dart';
 import 'package:flutter/material.dart';
 
 
 void main() {
+  List word = [nouns.take(50)];
+  for (String x in word){
+    print(x);
+  }
   runApp(
     MaterialApp(
       home: PasswordGenerator()
@@ -24,15 +28,15 @@ class PasswordGenerator extends StatefulWidget {
 
 class _PasswordGeneratorState extends State<PasswordGenerator> {
 
+
+
+  List word = [nouns.take(50)];
+  List word1 = word;
   var random1 = randomChoice(words,);
   var random2 = randomChoice(words,);
   var random3 = randomChoice(words,);
 
-
-
   @override
-
-
 
   Widget build(BuildContext context) {
     return Scaffold(
@@ -66,6 +70,7 @@ class _PasswordGeneratorState extends State<PasswordGenerator> {
               ],
             ),
             RaisedButton(
+
               onPressed: (){
                 setState(() {
                   random1 = randomChoice(words,);
