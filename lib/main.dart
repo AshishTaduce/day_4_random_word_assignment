@@ -2,20 +2,21 @@ import 'dart:math';
 import 'package:dart_random_choice/dart_random_choice.dart';
 import 'package:english_words/english_words.dart';
 import 'package:day_4_random_word_assignment/words.dart';
+import 'package:english_words/english_words.dart' as prefix0;
 import 'package:flutter/material.dart';
 
 
 void main() {
-  List word = [nouns.take(50)];
-  for (String x in word){
-    print(x);
-  }
+
+
   runApp(
     MaterialApp(
       home: PasswordGenerator()
     ),
   );
 }
+
+
 
 List words = Words.list; // you are given list of words
 
@@ -27,14 +28,11 @@ class PasswordGenerator extends StatefulWidget {
 }
 
 class _PasswordGeneratorState extends State<PasswordGenerator> {
+  
 
-
-
-  List word = [nouns.take(50)];
-  List word1 = word;
-  var random1 = randomChoice(words,);
-  var random2 = randomChoice(words,);
-  var random3 = randomChoice(words,);
+  var random1 = randomChoice(all,);
+  var random2 = randomChoice(all,);
+  var random3 = randomChoice(all,);
 
   @override
 
@@ -55,27 +53,20 @@ class _PasswordGeneratorState extends State<PasswordGenerator> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: <Widget>[
-                Text('$random1',
+                Text('$random1 $random2 $random3',
                 style: TextStyle(
-                  fontSize: 32,
+                  fontSize: 16,
                 ),),
-                Text('$random2',
-                  style: TextStyle(
-                    fontSize: 32,
-                  ),),
-                Text('$random3',
-                  style: TextStyle(
-                    fontSize: 32,
-                  ),),
+
               ],
             ),
             RaisedButton(
 
               onPressed: (){
                 setState(() {
-                  random1 = randomChoice(words,);
-                  random2 = randomChoice(words,);
-                  random3 = randomChoice(words,);
+                  random1 = randomChoice(prefix0.all,);
+                  random2 = randomChoice(prefix0.all,);
+                  random3 = randomChoice(prefix0.all,);
                 });
 
               },
